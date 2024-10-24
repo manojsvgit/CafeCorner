@@ -46,6 +46,7 @@ h2 {
     z-index: 1000;
 }
 
+/* Category Button */
 .category-btn {
     background-color: #FF9800;
     color: white;
@@ -59,17 +60,41 @@ h2 {
     display: flex; /* Center text within button */
     align-items: center;
     justify-content: center;
-    
 }
 
+/* Hover state with lift effect */
 .category-btn:hover {
-    background-color: #F57C00;
-    transform: translateY(-2px); /* Lift effect on hover */
+    background-color: #4CAF50; /* Use a more distinct green */
+    transform: translateY(-4px); /* Increased lift effect on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
+/* Active state (on click) */
 .category-btn:active {
-    transform: translateY(0); /* Reset position on click */
+    transform: translateY(2px); /* Slightly down effect on click for feedback */
+    background-color: #C62828; /* Darker red for active state */
+    box-shadow: none; /* Remove shadow for active state */
 }
+
+/* Scroll-detection-based Active Class */
+.category-btn.active {
+    background-color: #D32F2F; /* Highlight color for active section */
+    color: white;
+    transform: translateY(-4px); /* Maintain lift effect for active buttons */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow for active state */
+}
+
+/* Transition smoothness for hover, active, and scroll-detection */
+.category-btn {
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s; /* Add transition for box-shadow */
+}
+
+/* Ensures smooth transition when switching between hover and active states */
+.category-btn:hover, .category-btn.active, .category-btn:active {
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out; /* Smooth transitions */
+}
+
+
 
 /* Media Queries for Responsive Design */
 @media (max-width: 900px) {
